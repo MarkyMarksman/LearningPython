@@ -18,10 +18,22 @@ def welcomeBack():
     tkMessageBox.showinfo( "Zyno", "Zyno, Je bent een homo")
 
 def donothing():
-    print "hallo"
+    print("hai")
 
+def openAbout():
+    menuAbout = Toplevel()
+    menuAbout.mainloop()
+    blackbutton = Button(menuAbout, 
+                     text="Button", 
+                     fg="black",
+                      
+                     command = welcomeBack
+                     )
 
     
+def openHelp():
+    menuHelp = Toplevel()
+    menuHelp.mainloop()    
 
 #=======================================================================================    
 #MENU
@@ -54,8 +66,8 @@ editmenu.add_command(label="Select All", command=donothing)
 #MENUBAR2
 menubar.add_cascade(label="Edit", menu=editmenu)
 helpmenu = Menu(menubar, tearoff=0)
-helpmenu.add_command(label="Help Index", command=donothing)
-helpmenu.add_command(label="About...", command=donothing)
+helpmenu.add_command(label="Help", command=openHelp)
+helpmenu.add_command(label="About...", command=openAbout)
 #MENUBAR3
 menubar.add_cascade(label="Help", menu=helpmenu)
 
@@ -96,7 +108,6 @@ welcomeLabel.pack()
 
 
 
-
 #=======================================================================================
 #maakt knoppen
 
@@ -107,7 +118,9 @@ blackbutton = Button(goey,
                      fg="black",
                       
                      command = welcomeBack
-                     ).place(x=0,y=400)
+                     )
+blackbutton.pack(side = LEFT)
+blackbutton
 
 
 blackbutton = Button(goey, 
@@ -115,9 +128,9 @@ blackbutton = Button(goey,
                      fg="black",
                       
                      command = goey.quit
-                     ).place(x=400,y=400)
+                     )
 
-
+blackbutton.pack(side = RIGHT)
 
 
 
@@ -133,7 +146,16 @@ blackbutton = Button(goey,
 
 NotesLabel = Label(text= "Notes", fg= 'red')
 NotesLabel.pack()
-NotesText = Text(goey, height=5).pack()
+NotesText = Text(goey, height=2).pack()
+
+
+
+
+
+
+
+
+
 
 
 ######################TEST
